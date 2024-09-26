@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --blue1: hsl(222, 26%, 31%);
+    --blue2: hsl(223, 31%, 20%);
+    --blue3: hsl(224, 36%, 15%);
+    --keybg: hsl(225, 21%, 49%);
+    --keyshadow: hsl(224, 28%, 35%);
+    --red: hsl(6, 63%, 50%);
+    --darkred: hsl(6, 70%, 34%);
+    --lightorange: hsl(30, 25%, 89%);
+    --greyorange: hsl(28, 16%, 65%);
+    --darkgreyblue: hsl(221, 14%, 31%);   
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue1);
+}
+
+.container{
+    width: 95%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titlebar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#screen{
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: var(--blue2);
+    padding: 20px;
+    color: white;
+    text-align: right;
+    border-radius: 10px;
+}
+
+#controls{
+    background-color: var(--blue3);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    aspect-ratio: 5;
+    
+    button:last-child{
+        grid-column-start: 3;
+        grid-column-end: 5;
+        background-color: var(--red);
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0px 8px 0px var(--darkred);
+    }
+
+    button:nth-last-child(2){
+        background-color: var(--keybg);
+        grid-column-start: 1;
+        grid-column-end: 3;
+        color: white;
+    }
+
+    button{
+        font-size: 2rem;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0px 8px 0px var(--keyshadow);
+        cursor: pointer;
+    }
+
+    button:active{
+        box-shadow: 0px 0px 0px var(--keyshadow);
+        top: 8px;
+        position: relative;
+        transition: 0.1s;
+    }
+}
